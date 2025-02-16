@@ -1,14 +1,17 @@
-import User from "./components/User.tsx"
+import Button from "./components/Button";
 
 function App() {
   return (
     <>
       <div>
-        <User name='alex' age={20} isStudent={true}/>
-        
+        <Button
+          label="Click"
+          onClick={() => console.log("Clicked")}
+          disabled={false}
+        ></Button>
       </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
