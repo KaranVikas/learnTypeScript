@@ -1,17 +1,15 @@
-import Button from "./components/Button";
 
-function App() {
+import Counter from "./components/Counter";
+
+const App = () => {
+
   return (
-    <>
-      <div>
-        <Button
-          label="Click"
-          onClick={() => console.log("Clicked")}
-          disabled={false}
-        ></Button>
-      </div>
-    </>
+    <div>
+      {/* <ContentForm/> */}
+      {/* <EventHandling/> */}
+      <Counter />
+    </div>
   );
-}
+};
 
 export default App;
