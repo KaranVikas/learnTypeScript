@@ -1,13 +1,20 @@
-import { FC, useContext } from 'react'
-import { MyContext } from './MyContext'
+import { useReducer } from "react"
 
-const Counter:FC = () => {
-  const {count, increment, decrement} = useContext(MyContext)
+import { counterReducer, CounterState, CounterAction } from "../reducers/counterReducer"
+
+const initialState: CounterState = {count: 0}
+
+const Counter = () => {
+  const [state, dispatch] = useReducer(counterReducer, initialState)
+  const increment = () => {
+    dispatch({type:'INCREMENT'})
+  }
+
   return (
     <div>
-      <p>Count: {count}</p>
-      <button onClick={increment}>Increment</button>
-      <button onClick={decrement}>Decrement</button>
+      <h2>Count: {state.count}</h2>
+      <button onClick={increment}>INCRMENT</button>
+      <button onClick={() => dispatch({type:'DECREMENT'})}>DECREMENT</button>
     </div>
   )
 }
