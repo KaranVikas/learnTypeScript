@@ -1,4 +1,4 @@
-import {createContext, FC, ReactNode, useState }from 'react'
+import {createContext, FC, ReactNode, useState } from 'react'
 
 interface MycontentProps {
   count: number;
@@ -16,7 +16,7 @@ interface MyProviderProps{
   children: ReactNode
 }
 
-const MyProvider: FC<MyProviderProps> = ({children}) => {
+const MyProvider: FC<MyProviderProps> = ({ children }) => {
   const [count, setCount] = useState(0);
 
   const increment = () => {
@@ -26,10 +26,12 @@ const MyProvider: FC<MyProviderProps> = ({children}) => {
   const decrement = () => {
     setCount(count - 1)
   }
-  return 
+  
+  return (
     <MyContext.Provider value={{count, increment, decrement}}> 
       {children}
     </MyContext.Provider>
+    );
 }
 
 

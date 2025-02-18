@@ -5,8 +5,7 @@ const App = () => {
 
   return (
     <div>
-      {/* <ContentForm/> */}
-      {/* <EventHandling/> */}
+  
       <Counter />
     </div>
   );
